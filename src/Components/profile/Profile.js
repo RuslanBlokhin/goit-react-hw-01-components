@@ -1,42 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import defaultAvatar from "./defaultAvatar.png";
+import styles from './Profile.module.css'
 
 const Profile = ({ user }) => {
   return (
-    <div className="profile">
-      <div className="description">
+    <div className={styles.profile}>
+      <div className={styles.description}>
         <img
           width="200"
           src={user.avatar}
           alt="Аватар пользователя"
-          className="avatar"
+          className={styles.avatar}
         />
-        <p className="name">{user.name}</p>
-        <p className="tag">@{user.tag}</p>
-        <p className="location">{user.location}</p>
+        <p className={styles.name}>{user.name}</p>
+        <p className={styles.tag}>@{user.tag}</p>
+        <p className={styles.location}>{user.location}</p>
       </div>
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{user.stats.followers}</span>
+      <ul className={styles.stats}>
+        <li className={styles.statsItem}>
+          <span className={styles.label}>Followers</span>
+          <span className={styles.quantity}>{user.stats.followers}</span>
         </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{user.stats.views}</span>
+        <li className={styles.statsItem}>
+          <span className={styles.label}>Views</span>
+          <span className={styles.quantity}>{user.stats.views}</span>
         </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{user.stats.likes}</span>
+        <li className={styles.statsItem}>
+          <span className={styles.label}>Likes</span>
+          <span className={styles.quantity}>{user.stats.likes}</span>
         </li>
       </ul>
     </div>
   );
 };
-
-// Profile.defaultProps = {
-//   user: PropTypes.shape({ avatar: defaultAvatar }), <=== Наверное, так нельзя делать??
-// };
 
 Profile.propTypes = {
   user: PropTypes.shape({
