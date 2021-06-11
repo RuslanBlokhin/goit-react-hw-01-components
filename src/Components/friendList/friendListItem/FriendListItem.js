@@ -19,14 +19,12 @@ const FriendListItem = ({ avatar, name, isOnline }) => {
 
 FriendListItem.defaultProps = {
   avatar: defaultAvatar,
-  name: "User name",
-  isOnline: false,
 };
 
 FriendListItem.propTypes = {
   avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
 
 export default FriendListItem;
